@@ -6,17 +6,33 @@ var options = {
     host: 'https://mcash-bot.herokuapp.com/',
     path: ''
   };
+
   
+
+
+
   var req = http.get(options, function(res) {
     console.log('STATUS: ' + res.statusCode);
     console.log('HEADERS: ' + JSON.stringify(res.headers));
   
 
+    function getWebsite() {
+        req.on('error', function(e) {
+            console.log('ERROR: ' + e.message);
+          });
+        lastAsyncThing(function (error) {
+          //When your final async thing is done, start the timer
+          if (error) {
+              //log error. Maybe exit if it's irrecoverable.
+          }
+          setTimeout(doMainStuff, 10 * 1000);
+        });
+      }
+
+
   });
   
-  req.on('error', function(e) {
-    console.log('ERROR: ' + e.message);
-  });
+
 
 
 http.createServer(function (req, res) {
