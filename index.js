@@ -11,17 +11,17 @@ var options = {
 
 
 
-  var req = http.get(options, function(res) {
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
-  
-
-
-
-  });
+ 
   
   function getWebsite() {
+    var req = http.get(options, function(res) {
+        console.log('STATUS: ' + res.statusCode);
+        console.log('HEADERS: ' + JSON.stringify(res.headers));
       
+    
+    
+    
+      });
     req.on('error', function(e) {
         console.log('ERROR: ' + e.message);
       });
