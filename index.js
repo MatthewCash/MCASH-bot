@@ -2,9 +2,27 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const http = require('http');
 
+var options = {
+    host: 'https://mcash-bot.herokuapp.com/',
+    path: ''
+  };
+  
+  var req = http.get(options, function(res) {
+    console.log('STATUS: ' + res.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(res.headers));
+  
+
+  });
+  
+  req.on('error', function(e) {
+    console.log('ERROR: ' + e.message);
+  });
+
+
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    console.log("web = gud");
+    res._destroy()
+    console.log("Webpage requested");
   }).listen(process.env.PORT || 3000);
 
 var bot = new Discord.Client;
