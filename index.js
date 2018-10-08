@@ -5,29 +5,16 @@ const http = require('http');
 var options = {
     host: 'mcash-bot.herokuapp.com',
     path: ''
-  };
-
+}; 
   
-
-
-
- 
-  
-  function getWebsite() {
-    var req = http.get(options, function(res) {
-      
-    
-    
-    
-      });
+function getWebsite() {
+    var req = http.get(options, function(res) {});
     req.on('error', function(e) {
         console.log('ERROR: ' + e.message);
-      });
-    
+      });    
       setTimeout(getWebsite, 10 * 1000);
   }
 getWebsite();
-
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -77,7 +64,6 @@ bot.on('message', message => {
         });
     }
 
-
     if (message.channel.type == 'dm' && message.author != bot.user) {
         message.channel.fetchMessages({ limit: 10 })
         .then(messages => {
@@ -108,7 +94,6 @@ bot.on('message', message => {
         .catch(console.error);       
     }
 })
-
 
 console.log("Logging in with token...")
 bot.login('NDk0OTg0MzgwOTY0NjY3Mzky.Do7dzg.FirArk9M5PgTX_1bASogSasupK0');
