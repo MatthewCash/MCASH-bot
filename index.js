@@ -21,7 +21,7 @@ var options = {
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res._destroy()
+    res.destroy();
     console.log("Webpage requested");
   }).listen(process.env.PORT || 3000);
 
