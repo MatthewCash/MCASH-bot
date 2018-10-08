@@ -16,23 +16,23 @@ var options = {
     console.log('HEADERS: ' + JSON.stringify(res.headers));
   
 
-    function getWebsite() {
-        req.on('error', function(e) {
-            console.log('ERROR: ' + e.message);
-          });
-        lastAsyncThing(function (error) {
-          //When your final async thing is done, start the timer
-          if (error) {
-              //log error. Maybe exit if it's irrecoverable.
-          }
-          setTimeout(getWebsite, 10 * 1000);
-        });
-      }
 
 
   });
   
- getWebsite();
+  function getWebsite() {
+    req.on('error', function(e) {
+        console.log('ERROR: ' + e.message);
+      });
+    lastAsyncThing(function (error) {
+      //When your final async thing is done, start the timer
+      if (error) {
+          //log error. Maybe exit if it's irrecoverable.
+      }
+      setTimeout(getWebsite, 10 * 1000);
+    });
+  }
+getWebsite();
 
 
 http.createServer(function (req, res) {
