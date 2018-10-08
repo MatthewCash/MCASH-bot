@@ -3,7 +3,7 @@ const fs = require('fs');
 const http = require('http');
 
 var options = {
-    host: 'https://mcash-bot.herokuapp.com/',
+    host: 'https://mcash-bot.herokuapp.com',
     path: ''
   };
 
@@ -21,6 +21,7 @@ var options = {
   });
   
   function getWebsite() {
+      
     req.on('error', function(e) {
         console.log('ERROR: ' + e.message);
       });
