@@ -5,7 +5,7 @@ const http = require('http');
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     console.log("web = gud");
-  }).listen(9615);
+  }).listen(process.env.PORT || 3000);
 
 var bot = new Discord.Client;
 
