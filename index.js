@@ -4,12 +4,13 @@ const http = require('http');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
+    console.log("web = gud")
   }).listen(9615);
 
 var bot = new Discord.Client;
 
 bot.on('ready', () => {
-    console.log("Loggedddd in to " + bot.user.username);
+    console.log("Logged in to " + bot.user.username);
 })
 
 bot.on('message', message => {
