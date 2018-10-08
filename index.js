@@ -15,8 +15,6 @@ var options = {
   
   function getWebsite() {
     var req = http.get(options, function(res) {
-        console.log('STATUS: ' + res.statusCode);
-        console.log('HEADERS: ' + JSON.stringify(res.headers));
       
     
     
@@ -34,7 +32,6 @@ getWebsite();
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.destroy();
-    console.log("Webpage requested");
   }).listen(process.env.PORT || 3000);
 
 var bot = new Discord.Client;
