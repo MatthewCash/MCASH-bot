@@ -3,7 +3,7 @@ const fs = require('fs');
 const http = require('http');
 
 var options = {
-    host: 'https://mcash-bot.herokuapp.com',
+    host: 'http://mcash-bot.herokuapp.com',
     path: ''
   };
 
