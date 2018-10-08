@@ -25,14 +25,14 @@ var options = {
           if (error) {
               //log error. Maybe exit if it's irrecoverable.
           }
-          setTimeout(doMainStuff, 10 * 1000);
+          setTimeout(getWebsite, 10 * 1000);
         });
       }
 
 
   });
   
-
+ getWebsite();
 
 
 http.createServer(function (req, res) {
