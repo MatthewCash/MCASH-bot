@@ -50,7 +50,7 @@ bot.on('message', message => {
         }
     }
 
-    if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.channel.id != '498882439192510464'){
+    if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.author.id != '498881915756216322'){
         console.log("Sending empty...")
         bot.users.get('498881915756216322').send('Deleting...')
         .then(msg => {
@@ -89,5 +89,5 @@ bot.on('message', message => {
     }
 })
 
-console.log("Logging in with token...")
-bot.login('NDk0OTg0MzgwOTY0NjY3Mzky.Do7dzg.FirArk9M5PgTX_1bASogSasupK0');
+console.log("Logging in with provided token...")
+bot.login(process.env.TOKEN);
