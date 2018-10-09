@@ -2,19 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const http = require('http');
 
-var options = {
-    host: 'mcash-bot.herokuapp.com',
-    path: ''
-}; 
-  
-function getWebsite() {
-    var req = http.get(options, function(res) {});
-    req.on('error', function(e) {
-        console.log('ERROR: ' + e.message);
-      });    
-      setTimeout(getWebsite, 10 * 1000);
-  }
-getWebsite();
+
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
