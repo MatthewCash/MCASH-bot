@@ -37,7 +37,7 @@ bot.on('message', message => {
     }
 
     if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.channel.id != '498882439192510464'){
-        console.log("Sending empty...")
+        console.log("Sending empty in " + message.channel.id)
         bot.users.get('498881915756216322').send('Deleting...')
         .then(msg => {
           msg.delete(1)
