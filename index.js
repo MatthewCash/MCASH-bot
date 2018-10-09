@@ -1,19 +1,5 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const http = require('http');
-
-
-
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end();
-  }).listen(process.env.PORT || 3000);
-
-  http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end();
-  }).listen(25565);
-
 
 var bot = new Discord.Client;
 
@@ -90,4 +76,4 @@ bot.on('message', message => {
 })
 
 console.log("Logging in with token...")
-bot.login('NDk0OTg0MzgwOTY0NjY3Mzky.Do7dzg.FirArk9M5PgTX_1bASogSasupK0');
+bot.login('MTkyMDM1MDU1NTg0MDE4NDM1.DevVSA.5FdF6JsX7FrLzaSrSQRznWyxZ5Y');
