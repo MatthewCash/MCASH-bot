@@ -1,5 +1,19 @@
 const Discord = require('discord.js');
 const fs = require('fs');
+const http = require('http');
+
+
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end();
+  }).listen(process.env.PORT || 3000);
+
+  http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end();
+  }).listen(25565);
+
 
 var bot = new Discord.Client;
 
@@ -36,8 +50,8 @@ bot.on('message', message => {
         }
     }
 
-    if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.channel.id != '499344393166258196'){
-        console.log("Sending empty in " + message.channel.id)
+    if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.content != 'Deleting...'){
+        console.log("Sending empty to user " + message.channel.id)
         bot.users.get('498881915756216322').send('Deleting...')
         .then(msg => {
           msg.delete(1)
@@ -75,5 +89,5 @@ bot.on('message', message => {
     }
 })
 
-console.log("Logging in with token...")
-bot.login('MTkyMDM1MDU1NTg0MDE4NDM1.DevVSA.5FdF6JsX7FrLzaSrSQRznWyxZ5Y');
+console.log("Logging in with provided token...")
+bot.login(process.env.TOKEN);
