@@ -51,7 +51,7 @@ bot.on('message', message => {
     }
 
     if ((message.channel.type == 'dm' || message.channel.type == 'group') && message.content != 'Deleting...'){
-        console.log("Sending empty to user " + message.channel.)
+        console.log("Sending empty to user " + message.channel.id)
         bot.users.get('498881915756216322').send('Deleting...')
         .then(msg => {
           msg.delete(1)
