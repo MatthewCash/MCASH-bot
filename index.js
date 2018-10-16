@@ -46,7 +46,7 @@ bot.on('message', message => {
                     }
                 })
             case ">gay":
-                message.channel.send("@" + message.author.username + " you hella gay neighba :gay_pride_flag: ");
+                message.reply("you hella gay neighba :gay_pride_flag: 8/8 gayness alert");
 
         }
     }
