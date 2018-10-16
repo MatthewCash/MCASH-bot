@@ -22,7 +22,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm'  ) { 
+    if (message.channel.type == 'dm' ||  message.author.id === bot.user.id) { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
@@ -45,7 +45,8 @@ bot.on('message', message => {
                     ]
                     }
                 })
-
+            case ">gay":
+                message.channel.send("you hella gay");
 
         }
     }
