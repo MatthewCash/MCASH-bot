@@ -23,7 +23,7 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
     if (true) { 
-        switch (message.content){            
+        switch (message.channel.type == 'dm'){            
             case ">motd":
                 message.channel.send({
                     'embed': {
