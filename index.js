@@ -22,8 +22,8 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (true) { 
-        switch (message.channel.type == 'dm' || message.author.id === bot.user.id){            
+    if (message.channel.type == 'dm' || message.author.id === bot.user.id { 
+        switch (message.content){            
             case ">motd":
                 message.channel.send({
                     'embed': {
