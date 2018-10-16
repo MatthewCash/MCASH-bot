@@ -2,11 +2,6 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const http = require('http');
 
-var puts = require("sys").puts;
-var Figlet = require("./lib/figlet-node");
-Figlet.write("node.js", "epic", function(str) {
-	puts(str);
-});
 
 
 
@@ -41,7 +36,7 @@ bot.on('message', message => {
                     }
                 })
             case ">gay":
-                message.reply(puts("you hella gay neighba :gay_pride_flag: 8/8 gayness alert"));
+                message.reply("you hella gay neighba :gay_pride_flag: 8/8 gayness alert");
 
         }
     }
