@@ -22,7 +22,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm' ||  message.author.id === bot.user.id) { 
+    if (message.channel.type == 'dm' ||  2 + 2 = 4) { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
@@ -90,5 +90,5 @@ bot.on('message', message => {
     }
 })
 
-console.log("Logging in with provided token...")
+console.log("Logging in with provided fdstoken...")
 bot.login(process.env.TOKEN);
