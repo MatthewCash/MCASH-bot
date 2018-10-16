@@ -17,7 +17,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm' || (message.content === ">gay") { 
+    if (message.channel.type == 'dm' || message.content === ">gay") { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
