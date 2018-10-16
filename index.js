@@ -2,17 +2,12 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const http = require('http');
 
+var puts = require("sys").puts;
+var Figlet = require("./lib/figlet-node");
+Figlet.write("node.js", "epic", function(str) {
+	puts(str);
+});
 
-
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end();
-  }).listen(process.env.PORT || 3000);
-
-  http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end();
-  }).listen(25565);
 
 
 var bot = new Discord.Client;
@@ -22,7 +17,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm' || message.content === ">gay") { 
+    if (message.channel.type == 'dm' || (message.content === ">gay") { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
@@ -46,7 +41,7 @@ bot.on('message', message => {
                     }
                 })
             case ">gay":
-                message.reply("you hella gay neighba :gay_pride_flag: 8/8 gayness alert");
+                message.reply(puts("you hella gay neighba :gay_pride_flag: 8/8 gayness alert"));
 
         }
     }
