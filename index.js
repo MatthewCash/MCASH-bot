@@ -12,7 +12,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm' || message.content === ">gay") { 
+    if (message.channel.type == 'dm' || message.content === ">lit") { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
@@ -35,8 +35,8 @@ bot.on('message', message => {
                     ]
                     }
                 })
-            case ">gay":
-                message.reply("you hella gay neighba :gay_pride_flag: 8/8 gayness alert");
+            case ">lit":
+                message.reply("you hella lit neighba :fire: 8/8 litness alert");
 
         }
     }
