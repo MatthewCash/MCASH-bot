@@ -12,7 +12,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-    if (message.channel.type == 'dm' || message.content === ">lit") { 
+    if ((message.channel.type == 'dm' || message.channel.type == 'group') || message.content === ">lit") { 
         switch (message.content){            
             case ">motd":
                 message.channel.send({
