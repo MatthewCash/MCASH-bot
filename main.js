@@ -110,5 +110,5 @@ bot.on('message', async message => {
 
 bot.on('error', console.error);
 
-console.log('Logging in with environmental token...');
+console.log('Logging in with provided environmental token...');
 bot.login(process.env.TOKEN);
