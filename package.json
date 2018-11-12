@@ -2,14 +2,20 @@
   "name": "mcash-bot",
   "version": "0.1.0",
   "description": "Personal Selfbot",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
   "author": "Matthew_Cash",
   "license": "ISC",
+  "jshintConfig": {
+    "esversion": 6
+  },
   "dependencies": {
+    "discord-rpc": "^3.0.1",
     "discord.js": "^11.4.2",
+    "figlet": "^1.2.1",
     "fs": "0.0.1-security"
   }
 }
