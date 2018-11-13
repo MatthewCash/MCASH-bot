@@ -8,7 +8,7 @@ function execute(bot, sender, message, args) {
         let providedChannel = bot.channels.get(args[0]);
         if (providedChannel) {            
 
-            figlet(args.splice(1).toString().replace(/,/g, ' '), (err, ascii) => providedChannel.send('```' + ascii + '```'));
+            figlet(args.splice(1).join(' '), (err, ascii) => providedChannel.send('```' + ascii + '```'));
             
         }else message.channel.send('**ERROR:** Channel *' + args[0] + '* not found!');
     }
