@@ -11,6 +11,8 @@ const commandPrefix = '>';
 //----Load-Commands---------------------------
 //--------------------------------------------
 
+
+
 fs.readdir('./commands/', (err, data) => {
     if(err) console.error(err);
 
@@ -65,7 +67,7 @@ bot.on('message', async message => {
         if(publicCommandList.get(command)) {
             publicCommandList.get(command).execute(bot, sender, message, args);
         }else{
-            if (message.channel.type == 'text' && message.channel.id === '508105216911212585' && commandList.get(command)){
+            if ((message.author == bot.user || message.channel.id === '508105216911212585') && commandList.get(command)){
                 commandList.get(command).execute(bot, sender, message, args);
             }
         }   
