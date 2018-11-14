@@ -61,8 +61,6 @@ bot.on('message', async message => {
         let command = message.content.toLowerCase().split(' ')[0].substr(commandPrefix.length);
         let args = message.content.split(' ').slice(1);
 
-        console.log([sender.id, command, args]);
-
         if(publicCommandList.get(command)) {
             publicCommandList.get(command).execute(bot, sender, message, args);
             console.log([sender.username + sender.discriminator, command, args]);
