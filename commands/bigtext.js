@@ -3,7 +3,7 @@ const figlet = require('figlet');
 
 let embed = new Discord.RichEmbed();
 
-function execute(bot, sender, message, args) {
+async function execute(bot, sender, message, args) {
 
     if (!args[0] || (message.author !== bot.user && !args[1])){
         embed
@@ -33,4 +33,4 @@ function execute(bot, sender, message, args) {
     
 
 module.exports.execute = execute;
-module.exports.responds = ['bigtext', 'ascii'];
+module.exports.responds = ['bigtext', 'ascii', 'big'];

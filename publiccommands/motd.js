@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 let embed = new Discord.RichEmbed();
 
-function execute(bot, sender, message, args) {
+async function execute(bot, sender, message, args) {
 
     if (message.channel.type == 'text') return;    
 

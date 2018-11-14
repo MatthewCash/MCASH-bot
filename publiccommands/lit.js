@@ -1,4 +1,4 @@
-function execute(bot, sender, message, args) {
+async function execute(bot, sender, message, args) {
     
     if (args.length <= 0 || message.channel.type !== 'text'){
         return message.channel.send('<@' + message.author.id + '> you hella lit neighba :fire: 8/8 litness alert');

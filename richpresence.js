@@ -2,7 +2,7 @@ const DiscordRPC = require('discord-rpc');
 
 let client = new DiscordRPC.Client({transport: 'ipc'});
 
-function setGame(){
+async function setGame(){
 
     client = new DiscordRPC.Client({transport: 'ipc'});
     client.login({clientId: '510347079302905856'}).catch(console.error);
