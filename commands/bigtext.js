@@ -8,7 +8,7 @@ async function execute(bot, sender, message, args) {
     if (!args[0] || (message.author !== bot.user && !args[1])){
         embed
             .setAuthor(message.author.username + '#' + message.author.discriminator, message.author.avatarURL)
-            .setDescription('**Error** Please specify both a channel ID and a messaeg!')
+            .setDescription('**Error** Please specify both a channel ID and a message!')
             .setFooter('Matthew_Cash Bot')
             .setColor('#ff0000');
         return message.channel.send(embed);
