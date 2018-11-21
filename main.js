@@ -53,7 +53,6 @@ bot.on('ready', async () => {
 //--------------------------------------------
 
 bot.on('message', async message => {
-    message.author.fetchProfile()
 
     if (message.content === 'Deleting...') return;
 
