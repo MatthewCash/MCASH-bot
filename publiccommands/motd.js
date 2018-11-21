@@ -8,12 +8,46 @@ async function execute(bot, sender, message, args) {
 
     embed
         .setTitle('Welcome!')
-        .setDescription('Responses are generally sent within `2 hours`!\rI get a lot of DMs, please read over the list below to see if your question has already been answered!')
         .setColor(1993413)
         .setFooter('Created by Matthew_Cash#0210')
-        .setAuthor('Hello! Thank you for contacting me!', bot.user.avatarURL)
-        .addField('Common Questions', '```css\r[Can I get staff/partner on one of your servers?]\r- I am a developer on all of my servers, I would recommend checking if we have a currently applications process, or contacting a different staff member!\r\r[Can I hire you?]\r- Sure, I work as a developer and system administrator, let me know some more info, and I will get back to you ASAP!\r\r#General-Information\r- Timezone = PST\r- Languages = Java, C#, Bash, JS(Learning)\r- Current Servers = AstroHQ, ChampionPvP```');
-    message.channel.send(embed);
+        .setAuthor('If you are looking for staff/partner on one of my servers, react to this message!', bot.user.avatarURL);
+    
+
+    message.channel.send(embed).then(function (ban){
+        ban.react('✅');
+        
+        const filter = (reaction, user) => {
+            return ['✅'].includes(reaction.emoji.name);
+        };
+        
+        ban.awaitReactions(filter, { max: 2, time: 8000, errors: ['time'] })
+            .then(collected => {
+                const reaction = collected.first();
+        
+                if (reaction.count == 2) {
+                    
+                    message.channel.send("Ban Confirmed");
+                    console.log('f' + message.author.fetchProfile().mutualGuilds());
+                    for (var i in message.author.fetchProfile().mutualGuilds().toArray) {
+
+                        console.log(i);
+                    }
+
+                }
+                
+                
+                
+                
+                
+            }).catch(() => {
+                embed
+                    .setTitle('Ok, I will get back to you ASAP!')
+                    .setColor(1993413)
+                    .setFooter('Created by Matthew_Cash#0210');
+                message.channel.send(embed);
+            });
+    });
+        
 }
 
 module.exports.execute = execute;

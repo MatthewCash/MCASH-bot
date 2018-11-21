@@ -1,3 +1,5 @@
+let cooldown = new Set();
+
 async function execute(bot, sender, message, args) {
     
     if (args.length <= 0 || message.channel.type !== 'text'){
