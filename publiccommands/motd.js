@@ -4,6 +4,8 @@ let embed = new Discord.RichEmbed();
 
 async function execute(bot, sender, message, args) {
 
+    return console.log('Unfinished command fired!');
+
     if (message.channel.type == 'text') return;    
 
     embed
