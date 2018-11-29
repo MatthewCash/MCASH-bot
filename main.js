@@ -4,7 +4,6 @@ const fs = require('fs');
 const bot = new Discord.Client();
 let commandList = new Discord.Collection();
 let publicCommandList = new Discord.Collection();
-let embed = new Discord.RichEmbed();
 
 const commandPrefix = '>';
 
@@ -59,7 +58,7 @@ bot.on('message', async message => {
     if (message.content.indexOf(commandPrefix) === 0) {
         let sender = message.author;
         let command = message.content.toLowerCase().split(' ')[0].substr(commandPrefix.length);
-        let args = message.content.split(' ').slice(1);
+        let args = message.content.split(/ +/).slice(1);
 
         if(publicCommandList.get(command)) {
 
