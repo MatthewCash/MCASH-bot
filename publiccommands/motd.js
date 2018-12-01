@@ -23,6 +23,7 @@ async function execute(bot, sender, message, args) {
                 const reaction = collected.first();
         
                 if (reaction.count == 2) {          
+                    
                     embed = new Discord.RichEmbed();
                     embed
                         .setAuthor('Great! I should be able to help,', bot.user.avatarURL)
@@ -30,11 +31,14 @@ async function execute(bot, sender, message, args) {
                         .setColor(1993413)
                         .setFooter('Created by Matthew_Cash#0210');
                     message.channel.send(embed);
+
                     message.channel.awaitMessages(messageFilter, { max: 2, time: 10000, errors: ['time'] })
-                        .then(collected => {                            
+                        .then(collected => {
+
                             function serverTry(server){
                                 return collected.first(2)[1].content.toLowerCase().includes(server);
                             }
+
                             switch (true){
                             case serverTry('mineman'):
                                 embed = new Discord.RichEmbed();
