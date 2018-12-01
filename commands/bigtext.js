@@ -6,6 +6,7 @@ let embed = new Discord.RichEmbed();
 async function execute(bot, sender, message, args) {
 
     if (!args[0] || (message.author !== bot.user && !args[1])){
+        embed = new Discord.RichEmbed();
         embed
             .setAuthor(message.author.username + '#' + message.author.discriminator, message.author.avatarURL)
             .setDescription('**Error** Please specify both a channel ID and a message!')
@@ -22,6 +23,7 @@ async function execute(bot, sender, message, args) {
         message.delete();
         figlet(args.join(' '), (err, ascii) => message.channel.send('```' + ascii + '```'));
     } else {
+        embed = new Discord.RichEmbed();
         embed
             .setAuthor(message.author.username + '#' + message.author.discriminator, message.author.avatarURL)
             .setDescription('**Error** Please specify both a channel ID and a message!')
