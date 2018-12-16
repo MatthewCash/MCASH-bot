@@ -81,7 +81,7 @@ bot.on('message', async message => {
     if (message.channel.type == 'dm' && message.author != bot.user) {
         message.channel.fetchMessages({ limit: 10 }).then(messages => {
             if (messages.size == 1){                
-                //publicCommandList.get('motd').execute(bot, null, message, null);
+                //oldpublicCommandList.get('motd').execute(bot, null, message, null);
             }    
         }
         )
