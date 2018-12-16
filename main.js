@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client();
@@ -45,6 +44,7 @@ fs.readdir('./publiccommands/', (err, data) => {
 
 bot.on('ready', async () => {
     console.log('[Ready] Logged in to ' + bot.user.username);
+    bot.user.setActivity('matthew-cash.com', { type: 'STREAMING', url: 'https://www.twitch.tv/matthew_cashmc' });
 });
 
 //--------------------------------------------
@@ -81,7 +81,7 @@ bot.on('message', async message => {
     if (message.channel.type == 'dm' && message.author != bot.user) {
         message.channel.fetchMessages({ limit: 10 }).then(messages => {
             if (messages.size == 1){                
-                publicCommandList.get('motd').execute(bot, null, message, null);
+                //publicCommandList.get('motd').execute(bot, null, message, null);
             }    
         }
         )
