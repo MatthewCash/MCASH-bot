@@ -45,6 +45,7 @@ fs.readdir('./publiccommands/', (err, data) => {
 
 bot.on('ready', async () => {
     console.log('[Ready] Logged in to ' + bot.user.username);
+    client.user.setActivity('matthew-cash.com', { type: 'STREAMING' });
 });
 
 //--------------------------------------------
