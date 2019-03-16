@@ -10,12 +10,12 @@ const commandPrefix = '>';
 //----Load-Commands---------------------------
 //--------------------------------------------
 
-fs.readdir('./commands/', (err, data) => {
-    if(err) console.error(err);
+fs.readdir('./commands/', (error, data) => {
+    if (error) console.error(error);
 
     let fileData = data.filter(fileName => fileName.split('.').pop() === 'js');
 
-    if(fileData.length <= 0) {return console.warn('No commands in ./commands/');}
+    if (fileData.length <= 0) return console.warn('No commands in ./commands/');
 
     fileData.forEach((fileName) => {
         let module = require(`./commands/${fileName}`);
@@ -26,12 +26,12 @@ fs.readdir('./commands/', (err, data) => {
     });
 });
 
-fs.readdir('./publiccommands/', (err, data) => {
-    if(err) console.error(err);
+fs.readdir('./publiccommands/', (error, data) => {
+    if (error) console.error(error);
 
     let fileData = data.filter(fileName => fileName.split('.').pop() === 'js');
    
-    if(fileData.length <= 0) {return console.warn('No commands in ./publiccommands/');}
+    if(fileData.length <= 0) return console.warn('No commands in ./publiccommands/');
 
     fileData.forEach((fileName) => {
         let module = require(`./publiccommands/${fileName}`);
@@ -60,12 +60,12 @@ bot.on('message', async message => {
         let command = message.content.toLowerCase().split(' ')[0].substr(commandPrefix.length);
         let args = message.content.split(/ +/).slice(1);
 
-        if(publicCommandList.get(command)) {
+        if (publicCommandList.get(command)) {
 
             publicCommandList.get(command).execute(bot, sender, message, args);
             console.log([sender.username + sender.discriminator, command, args]);
 
-        }else if ((message.author == bot.user || message.channel.id === '508105216911212585') && commandList.get(command)){
+        } else if ((message.author == bot.user || message.channel.id === '508105216911212585') && commandList.get(command)) {
             
             commandList.get(command).execute(bot, sender, message, args);
             console.log([sender.username + sender.discriminator, command, args]);
