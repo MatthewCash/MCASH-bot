@@ -13,9 +13,10 @@
     "esversion": 6
   },
   "dependencies": {
-    "discord-rpc": "^3.0.1",
-    "discord.js": "^11.4.2",
-    "figlet": "^1.2.1",
+    "@types/node": "^12.12.17",
+    "discord-rpc": "^3.1.0",
+    "discord.js": "^11.5.1",
+    "figlet": "^1.2.4",
     "fs": "0.0.1-security"
   }
 }

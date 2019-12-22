@@ -1,3 +1,0 @@
-C:\Users\Matthew\JS stuff\MCASH bot\obj\Debug\MCASH Bot.njsprojAssemblyReference.cache
-C:\Users\Matthew\JS stuff\MCASH bot\obj\Debug\MCASH Bot.njsproj.CoreCompileInputs.cache
-C:\Users\Matthew\JS stuff\MCASH bot\bin\Microsoft.NodejsTools.WebRole.dll

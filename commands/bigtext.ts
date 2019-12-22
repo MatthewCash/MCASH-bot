@@ -1,11 +1,10 @@
-const Discord = require('discord.js');
-const figlet = require('figlet');
+import * as Discord from 'discord.js';
+import * as figlet from 'figlet';
 
 let embed = new Discord.RichEmbed();
 
-async function execute(bot, sender, message, args) {
-
-    if (!args[0] || (message.author !== bot.user && !args[1])){
+async function execute(bot, sender, message, args): Promise<void> {
+    if (!args[0] || (message.author !== bot.user && !args[1])) {
         embed = new Discord.RichEmbed();
         embed
             .setAuthor(message.author.username + '#' + message.author.discriminator, message.author.avatarURL)
@@ -17,9 +16,9 @@ async function execute(bot, sender, message, args) {
 
     let providedChannel = bot.channels.get(args[0]);
 
-    if (providedChannel) {          
-        figlet(args.splice(1).join(' '), (err, ascii) => providedChannel.send('```' + ascii + '```'));        
-    } else if (message.author == bot.user){
+    if (providedChannel) {
+        figlet(args.splice(1).join(' '), (err, ascii) => providedChannel.send('```' + ascii + '```'));
+    } else if (message.author == bot.user) {
         message.delete();
         figlet(args.join(' '), (err, ascii) => message.channel.send('```' + ascii + '```'));
     } else {
@@ -32,7 +31,8 @@ async function execute(bot, sender, message, args) {
         message.channel.send(embed);
     }
 }
-    
 
-module.exports.execute = execute;
-module.exports.responds = ['bigtext', 'ascii', 'big'];
+export default {
+    execute,
+    responds: ['bigtext', 'ascii', 'big']
+};
