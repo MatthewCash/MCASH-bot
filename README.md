@@ -1,6 +1,6 @@
 # mcash-bot
 
-> This is a personal selfbot for my Discord account. I no longer use it because selfbots violate the TOS, but it still works well
+> This is a personal selfbot for my Discord account. I no longer use it because selfbots violate the TOS, but it still works well and I update it from time to time just for fun.
 
 ## Server Installation Instructions
 

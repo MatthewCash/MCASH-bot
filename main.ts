@@ -1,5 +1,5 @@
-import * as Discord from 'discord.js';
-import * as fs from 'fs';
+import Discord from 'discord.js';
+import fs from 'fs';
 const bot = new Discord.Client();
 let commandList = {};
 let publicCommandList = {};
@@ -85,17 +85,6 @@ bot.on('message', async message => {
             .then((msg: Discord.Message) => {
                 (msg as Discord.Message).delete(1);
             });
-    }
-
-    if (message.channel.type == 'dm' && message.author != bot.user) {
-        message.channel
-            .fetchMessages({ limit: 10 })
-            .then(messages => {
-                if (messages.size == 1) {
-                    //oldpublicCommandList.get('motd').execute(bot, null, message, null);
-                }
-            })
-            .catch(console.error);
     }
 });
 
